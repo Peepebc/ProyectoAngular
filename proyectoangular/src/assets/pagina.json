@@ -1,0 +1,76 @@
+{
+  "usuarios": [
+    {
+      "id": 0,
+      "correo": "pepe@gmail.com",
+      "pass": "pepepepe",
+      "user": "pepe",
+      "rol": "1"
+    },
+    {
+      "id": 1,
+      "correo": "pepe2@gmail.com",
+      "pass": "pepepepe",
+      "user": "juan",
+      "rol": "0"
+    }
+  ],
+  "peliculas": [
+    {
+      "nombre": "Cadena Perpetua",
+      "imagen": "https://es.web.img3.acsta.net/medias/nmedia/18/74/26/88/20133359.jpg",
+      "anio": "1995",
+      "id": 1
+    },
+    {
+      "nombre": "El padrino",
+      "imagen": "https://www.udllibros.com/imagenes/9788418/978841818137.JPG",
+      "anio": "1973",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nombre": "El Caballero Oscuro",
+      "imagen": "https://www.lavanguardia.com/peliculas-series/images/movie/poster/2008/7/w1280/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg",
+      "anio": "2008"
+    },
+    {
+      "id": 4,
+      "nombre": "El padrino 2",
+      "imagen": "https://ih1.redbubble.net/image.261518158.3509/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg",
+      "anio": "1974"
+    },
+    {
+      "nombre": "Peter Pan",
+      "imagen": "https://static.wikia.nocookie.net/dhadas/images/e/e1/Peter-pan-disney-poster-cartel-6.jpg/revision/latest?cb=20150522221945&path-prefix=es",
+      "anio": "1992",
+      "id": 5
+    }
+  ],
+  "comentarios": [
+    {
+      "id": 0,
+      "user": 0,
+      "pelicula": 1,
+      "comentario": "Muy buena pelicula"
+    },
+    {
+      "id": 1,
+      "user": 0,
+      "pelicula": 2,
+      "comentario": "Muy buena pelicula"
+    },
+    {
+      "id": 2,
+      "user": 0,
+      "pelicula": 3,
+      "comentario": "Muy mala pelicula"
+    },
+    {
+      "id": 3,
+      "user": 0,
+      "pelicula": 4,
+      "comentario": "Muy mala pelicula"
+    }
+  ]
+}

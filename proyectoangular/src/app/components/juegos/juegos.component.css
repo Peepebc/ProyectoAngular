@@ -1,0 +1,9 @@
+.peliculas{
+  display: grid;
+  grid-template-columns: auto;
+}
+
+img{
+  width: 200px;
+  height: 400px;
+}
