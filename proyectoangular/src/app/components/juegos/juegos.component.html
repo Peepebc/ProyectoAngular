@@ -1,3 +1,5 @@
-<div class="peliculas" *ngFor="let pelicula of peliculas">
-<img src={{pelicula.imagen}}><br>
+<div class="contenedor">
+<div class="peliculas" >
+<a routerLink="/juego/{{pelicula.id}}" *ngFor="let pelicula of peliculas"><img src={{pelicula.imagen}} ></a>
+</div>
 </div>

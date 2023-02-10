@@ -7,7 +7,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const appRoutes:Routes=[
   {path:'juegos',component:JuegosComponent},
-  {path:'juego',component:JuegoComponent},
+  {path:'juego/:id',component:JuegoComponent},
   {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/juegos', pathMatch:'full'},
   {path:'**',component: NotFoundComponent}

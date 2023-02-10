@@ -10,10 +10,15 @@ import {Observable} from 'rxjs';
 export class ListaPeliculasService {
 
   private apiurl="http://localhost:8080/peliculas";
-
   constructor(private http:HttpClient) { }
 
   listarPeliculas(): Observable<Pelicula[]>{
     return this.http.get<Pelicula[]>(this.apiurl);
   }
+
+  mostrarPelicula(id:number): Observable<Pelicula>{
+    return this.http.get<Pelicula>(`${this.apiurl}/${id}`);
+  }
+
+
 }
