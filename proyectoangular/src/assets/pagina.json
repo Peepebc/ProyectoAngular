@@ -5,6 +5,7 @@
       "correo": "pepe@gmail.com",
       "pass": "pepepepe",
       "user": "pepe",
+      "pfp": "https://static.wixstatic.com/media/f24844_0dabe639566d4f6a99c9f68e5ba88c02~mv2.png/v1/fill/w_540,h_533,al_c,lg_1,q_85,enc_auto/f24844_0dabe639566d4f6a99c9f68e5ba88c02~mv2.png",
       "rol": "1"
     },
     {
@@ -12,6 +13,7 @@
       "correo": "pepe2@gmail.com",
       "pass": "pepepepe",
       "user": "juan",
+      "pfp": "https://observatorioblockchain.com/wp-content/uploads/2022/08/Que-son-y-para-que-se-utilizan-las-colecciones-PFP-NFT.jpg",
       "rol": "0"
     }
   ],
@@ -50,27 +52,29 @@
   "comentarios": [
     {
       "id": 0,
-      "user": 0,
+      "user":        {
+          "id": 1,
+          "correo": "pepe2@gmail.com",
+          "user": "juan",
+          "pfp": "https://static.wixstatic.com/media/f24844_0dabe639566d4f6a99c9f68e5ba88c02~mv2.png/v1/fill/w_540,h_533,al_c,lg_1,q_85,enc_auto/f24844_0dabe639566d4f6a99c9f68e5ba88c02~mv2.png",
+          "rol": "0"
+        }
+      ,
       "pelicula": 1,
       "comentario": "Muy buena pelicula"
     },
     {
-      "id": 1,
-      "user": 0,
-      "pelicula": 2,
-      "comentario": "Muy buena pelicula"
-    },
-    {
-      "id": 2,
-      "user": 0,
-      "pelicula": 3,
-      "comentario": "Muy mala pelicula"
-    },
-    {
-      "id": 3,
-      "user": 0,
-      "pelicula": 4,
-      "comentario": "Muy mala pelicula"
+      "id": 0,
+      "user":        {
+        "id": 1,
+        "correo": "pepe2@gmail.com",
+        "user": "Manolo",
+        "pfp": "https://observatorioblockchain.com/wp-content/uploads/2022/08/Que-son-y-para-que-se-utilizan-las-colecciones-PFP-NFT.jpg",
+        "rol": "0"
+      }
+    ,
+      "pelicula": 1,
+      "comentario": "No me ha gustado nada la pelicula"
     }
   ]
 }

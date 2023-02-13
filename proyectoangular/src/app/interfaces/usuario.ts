@@ -3,5 +3,6 @@ export interface Usuario {
       correo: string,
       pass: string,
       user: string,
+      pfp: string,
       rol: number
 }

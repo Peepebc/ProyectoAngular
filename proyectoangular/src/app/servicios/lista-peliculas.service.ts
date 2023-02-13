@@ -13,11 +13,11 @@ export class ListaPeliculasService {
   constructor(private http:HttpClient) { }
 
   listarPeliculas(): Observable<Pelicula[]>{
-    return this.http.get<Pelicula[]>(this.apiurl);
+    return this.http.get<Pelicula[]>(`${this.apiurl}/obtener`);
   }
 
   mostrarPelicula(id:number): Observable<Pelicula>{
-    return this.http.get<Pelicula>(`${this.apiurl}/${id}`);
+    return this.http.get<Pelicula>(`${this.apiurl}/obtenerUna?id=${id}`);
   }
 
 

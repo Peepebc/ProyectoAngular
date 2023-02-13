@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Pelicula } from 'src/app/interfaces/pelicula';
 import { ListaPeliculasService } from 'src/app/servicios/lista-peliculas.service';
+import { Comentario } from 'src/app/interfaces/comentario';
+import { APIComentariosService } from 'src/app/servicios/api-comentarios.service';
 import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
@@ -11,9 +13,10 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class JuegoComponent {
 
 
-  pelicula:Pelicula={nombre:"",imagen:"",anio:"",id:0}
+  pelicula:Pelicula={nombre:"",poster:"",comentarios:[],descripcion:"",anio:"",id:0}
 
-  constructor(private mostrarpeliculas:ListaPeliculasService,private route: ActivatedRoute){}
+
+  constructor(private mostrarpeliculas:ListaPeliculasService,private mostrarComentarios:APIComentariosService,private route: ActivatedRoute){}
 
 
   ngOnInit(): void{
