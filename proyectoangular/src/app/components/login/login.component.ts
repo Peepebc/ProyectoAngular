@@ -1,4 +1,9 @@
+import { Token } from '@angular/compiler';
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { APIUsuariosService } from 'src/app/servicios/api-usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -6,5 +11,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  constructor(private loginUsuario: APIUsuariosService, private router: Router, private cookiService:CookieService) { }
+
+
+  onSubmit(form: NgForm): any {
+    const correo = form.value.email
+    const pass = form.value.pass
+
+    let user: Object = { "correo": correo, "pass":pass}
+    this.loginUsuario.autenticarUsuario(user).subscribe((results:any)=>{this.cookiService.set("token",results.jwt)});
+  }
 
 }

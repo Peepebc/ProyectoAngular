@@ -1,5 +1,7 @@
+import { PathLocationStrategy } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
 import { Pelicula } from 'src/app/interfaces/pelicula';
 import { ListaPeliculasService } from 'src/app/servicios/lista-peliculas.service';
 
@@ -11,7 +13,7 @@ import { ListaPeliculasService } from 'src/app/servicios/lista-peliculas.service
 export class CrearPeliculaComponent {
 
 
-  constructor(private anadirPelicula:ListaPeliculasService){}
+  constructor(private anadirPelicula:ListaPeliculasService, private router:Router){}
 
 onSubmit(form : NgForm){
   const nombre = form.value.nombre
@@ -23,6 +25,7 @@ onSubmit(form : NgForm){
   console.log(JSON.stringify(pelicula))
 
   this.anadirPelicula.anadirPelicula(pelicula).subscribe();console.log(pelicula);
+  this.router.navigate(['juegos'])
 
 }
 

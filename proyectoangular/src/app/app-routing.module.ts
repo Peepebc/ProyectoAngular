@@ -5,11 +5,14 @@ import { JuegoComponent } from './components/juego/juego.component';
 import { JuegosComponent } from './components/juegos/juegos.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { GuardianGuard } from './guardian.guard';
 
 const appRoutes:Routes=[
   {path:'juegos',component:JuegosComponent},
   {path:'juego/:id',component:JuegoComponent},
   {path:'anadirJuegos',component:CrearPeliculaComponent},
+  {path:'perfil',component:PerfilComponent},
   {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/juegos', pathMatch:'full'},
   {path:'**',component: NotFoundComponent}

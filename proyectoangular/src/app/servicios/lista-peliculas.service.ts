@@ -25,8 +25,8 @@ export class ListaPeliculasService {
     return this.http.get<Pelicula>(`${this.apiurl}/obtenerUna?id=${id}`);
   }
 
-  anadirPelicula(pelicula:any): Observable<Pelicula>{
-    return this.http.get<Pelicula>(`${this.apiurl}/anadir`,httpOptions);
+  anadirPelicula(pelicula:Pelicula): Observable<Pelicula>{
+    return this.http.post<Pelicula>(`${this.apiurl}/anadir`,pelicula,httpOptions);
   }
 
 

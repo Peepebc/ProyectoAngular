@@ -11,6 +11,10 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CrearPeliculaComponent } from './components/crear-pelicula/crear-pelicula.component';
 import { FormsModule } from '@angular/forms';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { GuardianGuard } from './guardian.guard';
+import { CookieService } from 'ngx-cookie-service';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +24,8 @@ import { FormsModule } from '@angular/forms';
     JuegoComponent,
     LoginComponent,
     NotFoundComponent,
-    CrearPeliculaComponent
+    CrearPeliculaComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
