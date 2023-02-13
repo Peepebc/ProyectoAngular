@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Pelicula } from '../interfaces/pelicula';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { JsonPipe } from '@angular/common';
 
+
+const httpOptions={
+  headers:new HttpHeaders({'Content-Type':'application/json',}),
+ };
 @Injectable({
   providedIn: 'root'
 })
@@ -18,6 +23,10 @@ export class ListaPeliculasService {
 
   mostrarPelicula(id:number): Observable<Pelicula>{
     return this.http.get<Pelicula>(`${this.apiurl}/obtenerUna?id=${id}`);
+  }
+
+  anadirPelicula(pelicula:any): Observable<Pelicula>{
+    return this.http.get<Pelicula>(`${this.apiurl}/anadir`,httpOptions);
   }
 
 

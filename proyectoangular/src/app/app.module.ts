@@ -9,6 +9,8 @@ import { JuegoComponent } from './components/juego/juego.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CrearPeliculaComponent } from './components/crear-pelicula/crear-pelicula.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { HttpClientModule } from '@angular/common/http';
     JuegosComponent,
     JuegoComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    CrearPeliculaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
