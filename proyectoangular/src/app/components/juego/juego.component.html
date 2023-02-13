@@ -95,19 +95,20 @@
     </div>
   </form>
 
-      <div class="w-10/12 divide-y" *ngIf="pelicula.comentarios.length > 0; else noComments">
-      <div class="flex w-full" *ngFor="let comentario of pelicula.comentarios">
+      <div class="w-10/12 divide-y" *ngIf="pelicula.comments.length > 0; else noComments">
+      <div class="flex w-full" *ngFor="let comentario of pelicula.comments">
         <img
           class="rounded-[50%] object-cover w-20 h-20 p-4"
-          src=""
+          src="{{comentario.usuarioPfp}}"
           alt=""
         />
         <div class="flex flex-col justify-center">
-          <h1 class="font-extrabold">xd</h1>
-          <h1 class="font-thin">xd</h1>
+          <h1 class="font-extrabold">{{comentario.usuarioBean}}</h1>
+          <h1 class="font-thin">{{comentario.comentario}}</h1>
         </div>
       </div>
   </div>
-  <ng-template #noComments>NO HAY COMENTARIOS</ng-template>
+ <ng-template #noComments>NO HAY COMENTARIOS</ng-template>
+
 
 </section>

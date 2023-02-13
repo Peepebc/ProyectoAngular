@@ -4,7 +4,7 @@ export interface Pelicula {
       nombre: string,
       poster: string,
       descripcion: string,
-      comentarios:Comentario[],
+      comments:Comentario[],
       anio: string,
       id: number
 }

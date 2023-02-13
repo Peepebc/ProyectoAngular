@@ -13,13 +13,13 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class JuegoComponent {
 
 
-  pelicula:Pelicula={nombre:"",poster:"",comentarios:[],descripcion:"",anio:"",id:0}
+  pelicula:Pelicula={nombre:"",poster:"",comments:[],descripcion:"",anio:"",id:0}
 
 
   constructor(private mostrarpeliculas:ListaPeliculasService,private mostrarComentarios:APIComentariosService,private route: ActivatedRoute){}
 
 
   ngOnInit(): void{
-    this.mostrarpeliculas.mostrarPelicula(Number(this.route.snapshot.paramMap.get("id"))).subscribe(pelicula=>{(this.pelicula=pelicula);console.log(pelicula)});
+    this.mostrarpeliculas.mostrarPelicula(Number(this.route.snapshot.paramMap.get("id"))).subscribe(pelicula=>{(this.pelicula=pelicula);console.log(pelicula.comments.length)});
   }
 }
