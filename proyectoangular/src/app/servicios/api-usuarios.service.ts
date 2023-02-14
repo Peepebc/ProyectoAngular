@@ -16,12 +16,11 @@ export class APIUsuariosService {
   private apiurl="http://localhost:8080/usuarios";
   constructor(private http:HttpClient) { }
 
-  autenticarUsuario(usuario:Object): Observable<Object>{
-    console.log(httpOptions)
+  autenticarUsuario(usuario:Object){
     return this.http.post(`${this.apiurl}/autentica`,usuario,httpOptions);
   }
 
-  obtenerDatos(): Observable<Object>{
+  obtenerDatos(){
     return this.http.get(`${this.apiurl}/quieneres`,httpOptions);
   }
 }

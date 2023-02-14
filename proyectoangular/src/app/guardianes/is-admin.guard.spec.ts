@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { GuardianGuard } from './guardian.guard';
+import { IsAdminGuard } from './is-admin.guard';
 
-describe('GuardianGuard', () => {
-  let guard: GuardianGuard;
+describe('IsAdminGuard', () => {
+  let guard: IsAdminGuard;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    guard = TestBed.inject(GuardianGuard);
+    guard = TestBed.inject(IsAdminGuard);
   });
 
   it('should be created', () => {

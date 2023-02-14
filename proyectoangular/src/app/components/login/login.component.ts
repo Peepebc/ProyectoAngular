@@ -14,6 +14,12 @@ export class LoginComponent {
 
   constructor(private loginUsuario: APIUsuariosService, private router: Router, private cookiService:CookieService) { }
 
+  ngOnInit(){
+    if(this.cookiService.check("jwt")){
+      this.router.navigate(['perfil'])
+    }
+  }
+
 
   onSubmit(form: NgForm): any {
     const correo = form.value.email
@@ -21,9 +27,11 @@ export class LoginComponent {
 
     let user: Object = { "correo": correo, "pass":pass}
     this.loginUsuario.autenticarUsuario(user).subscribe((results:any)=>{
-      if(results.jwt!=undefined)this.cookiService.set("jwt",results.jwt)});
-    localStorage.setItem("auto",this.cookiService.get("jwt"))
-    this.router.navigate(['perfil'])
+      if(results.jwt!=undefined){
+        this.cookiService.set("jwt",results.jwt)
+        this.router.navigate(['perfil'])
+  }});
+
   }
 
 }

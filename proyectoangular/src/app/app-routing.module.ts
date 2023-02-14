@@ -6,14 +6,15 @@ import { JuegosComponent } from './components/juegos/juegos.component';
 import { LoginComponent } from './components/login/login.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
-import { UserGuardGuard } from './user-guard.guard';
+import { IsAdminGuard } from './guardianes/is-admin.guard';
+import { UserGuardGuard } from './guardianes/user-guard.guard';
 
 
 const appRoutes:Routes=[
   {path:'juegos',component:JuegosComponent},
   {path:'juego/:id',component:JuegoComponent},
-  {path:'anadirJuegos',component:CrearPeliculaComponent},
-  {path:'perfil',canActivate:[UserGuardGuard],component:PerfilComponent },
+  {path:'anadirJuegos',canActivate:[IsAdminGuard],component:CrearPeliculaComponent},
+  {path:'perfil',canActivate:[UserGuardGuard],component:PerfilComponent},
   {path:'login',component:LoginComponent},
   {path:'',redirectTo:'/juegos', pathMatch:'full'},
   {path:'**',component: NotFoundComponent}
