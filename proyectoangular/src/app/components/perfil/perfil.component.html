@@ -1,1 +1,7 @@
-<p>perfil works!</p>
+<div class="flex justify-center h-96 items-center gap-9">
+  <img src="{{ usuario.pfp }}" class="w-40 rounded-full float-left" />
+  <div class="flex flex-col gap-4 items-start">
+      <p class="text-4xl font-extrabold">{{ usuario.nombre }}</p>
+      <p>{{ usuario.correo }}</p>
+  </div>
+</div>

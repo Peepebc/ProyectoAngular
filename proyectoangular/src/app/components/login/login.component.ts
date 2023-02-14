@@ -20,7 +20,10 @@ export class LoginComponent {
     const pass = form.value.pass
 
     let user: Object = { "correo": correo, "pass":pass}
-    this.loginUsuario.autenticarUsuario(user).subscribe((results:any)=>{this.cookiService.set("token",results.jwt)});
+    this.loginUsuario.autenticarUsuario(user).subscribe((results:any)=>{
+      if(results.jwt!=undefined)this.cookiService.set("jwt",results.jwt)});
+    localStorage.setItem("auto",this.cookiService.get("jwt"))
+    this.router.navigate(['perfil'])
   }
 
 }

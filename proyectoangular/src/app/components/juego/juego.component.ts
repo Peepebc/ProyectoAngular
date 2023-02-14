@@ -16,7 +16,7 @@ export class JuegoComponent {
   pelicula:Pelicula={nombre:"",poster:"",comments:[],descripcion:"",anio:"",id:0}
 
 
-  constructor(private mostrarpeliculas:ListaPeliculasService,private mostrarComentarios:APIComentariosService,private route: ActivatedRoute){}
+  constructor(private mostrarpeliculas:ListaPeliculasService,private route: ActivatedRoute){}
 
 
   ngOnInit(): void{
