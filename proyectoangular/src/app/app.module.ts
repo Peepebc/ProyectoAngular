@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { CookieService } from 'ngx-cookie-service';
 import { JwtInterceptorInterceptor } from './jwt-interceptor.interceptor';
+import { RegisterComponent } from './components/register/register.component';
+import { EditarComponent } from './components/editar/editar.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { JwtInterceptorInterceptor } from './jwt-interceptor.interceptor';
     LoginComponent,
     NotFoundComponent,
     CrearPeliculaComponent,
-    PerfilComponent
+    PerfilComponent,
+    RegisterComponent,
+    EditarComponent
   ],
   imports: [
     BrowserModule,

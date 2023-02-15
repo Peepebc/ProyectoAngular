@@ -28,7 +28,8 @@ export class LoginComponent {
     let user: Object = { "correo": correo, "pass":pass}
     this.loginUsuario.autenticarUsuario(user).subscribe((results:any)=>{
       if(results.jwt!=undefined){
-        this.cookiService.set("jwt",results.jwt)
+        //this.cookiService.set("jwt",results.jwt)
+        sessionStorage.setItem("jwt",results.jwt)
         this.router.navigate(['perfil'])
   }});
 

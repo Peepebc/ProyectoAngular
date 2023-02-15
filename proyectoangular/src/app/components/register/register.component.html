@@ -1,7 +1,23 @@
 <app-header></app-header>
 <div class="datos flex flex-col items-center justify-center">
-  <h1 class="text-3xl font-extrabold p-6">LOGIN</h1>
+  <h1 class="text-3xl font-extrabold p-6">REGISTER</h1>
   <form class="w-96 rounded" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="mb-6">
+      <label
+        for="user"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Username</label
+      >
+      <input
+        type="text"
+        id="user"
+        name="user"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="pepito"
+        required
+        ngModel
+      />
+    </div>
     <div class="mb-6">
       <label
         for="email"
@@ -33,6 +49,22 @@
         ngModel
       />
     </div>
+    <div class="mb-6">
+      <label
+        for="pfp"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Imagen Perfil</label
+      >
+      <input
+        type="text"
+        id="pfp"
+        name="pfp"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        placeholder="URL img"
+        required
+        ngModel
+      />
+    </div>
     <div class="flex justify-between">
     <button
       type="submit"
@@ -40,7 +72,7 @@
     >
       Submit
     </button>
-    <a routerLink="/register" class="underline text-blue-500">¿No tienes cuenta? Registrate</a>
-    </div>
+    <a routerLink="/login" class="underline text-blue-500">¿Tienes cuenta? Inicia Sesion</a>
+  </div>
   </form>
 </div>

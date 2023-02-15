@@ -29,5 +29,9 @@ export class ListaPeliculasService {
     return this.http.post<Pelicula>(`${this.apiurl}/anadir`,pelicula,httpOptions);
   }
 
+  eliminarPelicula(id:number){
+    return this.http.get<Pelicula>(`${this.apiurl}/delete/${id}`);
+  }
+
 
 }

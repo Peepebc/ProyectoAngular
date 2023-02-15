@@ -17,7 +17,7 @@ export class UserGuardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
 
-    if(!this.cookie.check('jwt')){
+    if(!sessionStorage.getItem('jwt')){
       this.router.navigate(['login'])
     }
     return true;

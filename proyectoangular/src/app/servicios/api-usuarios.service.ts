@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 import { JsonPipe } from '@angular/common';
 
 const httpOptions={
-  headers:new HttpHeaders({'Content-Type':'application/json',"hola":"fwa"}),
+  headers:new HttpHeaders({'Content-Type':'application/json'}),
  };
 @Injectable({
   providedIn: 'root'
@@ -22,5 +22,9 @@ export class APIUsuariosService {
 
   obtenerDatos(){
     return this.http.get(`${this.apiurl}/quieneres`,httpOptions);
+  }
+
+  registerUsuario(usuario:Usuario){
+    return this.http.post(`${this.apiurl}/register`,usuario,httpOptions);
   }
 }

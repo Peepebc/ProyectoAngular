@@ -1,8 +1,9 @@
+import { Pelicula } from "./pelicula"
 import {Usuario} from "./usuario"
 export interface Comentario {
   id: number,
-  usuarioBean: string,
-  peliculaBean: string,
   comentario: string,
-  usuarioPfp: string
+  usuarioBean: Usuario,
+  peliculaBean: Pelicula,
+  usuarioPfp:string
 }

@@ -8,14 +8,19 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
 import { IsAdminGuard } from './guardianes/is-admin.guard';
 import { UserGuardGuard } from './guardianes/user-guard.guard';
+import { RegisterComponent } from './components/register/register.component';
+import { EditarComponent } from './components/editar/editar.component';
 
 
 const appRoutes:Routes=[
   {path:'juegos',component:JuegosComponent},
   {path:'juego/:id',component:JuegoComponent},
   {path:'anadirJuegos',canActivate:[IsAdminGuard],component:CrearPeliculaComponent},
+  {path:'editar',canActivate:[IsAdminGuard],component:EditarComponent},
   {path:'perfil',canActivate:[UserGuardGuard],component:PerfilComponent},
   {path:'login',component:LoginComponent},
+  {path:'register',component:RegisterComponent},
+  {path: 'RefrshComponent',component:JuegoComponent},
   {path:'',redirectTo:'/juegos', pathMatch:'full'},
   {path:'**',component: NotFoundComponent}
  ]

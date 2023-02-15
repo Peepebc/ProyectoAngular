@@ -1,8 +1,11 @@
+import { Comentario } from "./comentario";
+
 export interface Usuario {
       id: number,
       correo: string,
       pass: string,
-      user: string,
       pfp: string,
-      rol: number
+      rol:number,
+      user: string,
+      comments:Comentario[]
 }

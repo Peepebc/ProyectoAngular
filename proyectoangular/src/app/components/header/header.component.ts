@@ -14,7 +14,8 @@ export class HeaderComponent {
   constructor (private apiUsuario:APIUsuariosService,private cookieService:CookieService){}
 
   ngOnInit(): void{
-    if(this.cookieService.check("jwt")){
+    if(sessionStorage.getItem("jwt")){
+    //if(this.cookieService.check("jwt")){
     this.apiUsuario.obtenerDatos().subscribe((datos:Object)=>this.usuario=datos);
   }
   else{
