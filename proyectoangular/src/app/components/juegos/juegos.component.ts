@@ -14,7 +14,7 @@ export class JuegosComponent {
   constructor(private listarpeliculas:ListaPeliculasService){}
 
   ngOnInit(): void{
-    this.listarpeliculas.listarPeliculas().subscribe(peliculas=>{(this.peliculas=peliculas);console.log(peliculas)});
+    this.listarpeliculas.listarPeliculas().subscribe(peliculas=>{(this.peliculas=peliculas)});
   }
 
 }
