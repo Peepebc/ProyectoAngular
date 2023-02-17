@@ -15,14 +15,13 @@ export class PerfilComponent {
   constructor (private apiUsuario:APIUsuariosService,private cookie:CookieService,private route:Router){}
 
   logOut =  () =>{
-    //this.cookie.delete("jwt","/juegos");
     sessionStorage.removeItem("jwt")
     this.usuario=null;
     this.route.navigate(['juegos'])
   }
 
   ngOnInit(): void{
-    this.apiUsuario.obtenerDatos().subscribe((datos:Object)=>this.usuario=datos);
+    this.apiUsuario.obtenerDatos().subscribe((datos:Object)=>{console.log(datos);this.usuario=datos});
   }
 
 

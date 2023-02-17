@@ -36,7 +36,8 @@ export class RegisterComponent {
       "pfp": pfp,
       "rol": 0,
       "user": user,
-      "comments": []
+      "comments": [],
+      favoritos: []
     }
     this.loginUsuario.registerUsuario(usuario).subscribe((results:any)=>{
       this.loginUsuario.autenticarUsuario({"correo":correo,"pass":pass}).subscribe((results:any)=>{

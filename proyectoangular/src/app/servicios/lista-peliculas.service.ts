@@ -33,5 +33,9 @@ export class ListaPeliculasService {
     return this.http.get<Pelicula>(`${this.apiurl}/delete/${id}`);
   }
 
+  editarPelicula(pelicula:Pelicula){
+    return this.http.put<Pelicula>(`${this.apiurl}/editar`,pelicula,httpOptions);
+  }
+
 
 }

@@ -1,16 +1,21 @@
 <app-header></app-header>
 <section class="flex flex-col md:flex-row justify-center items-center md:items-start py-10 gap-12">
   <div>
-    <img class="max-w-xs w-96 rounded-lg" src="{{ pelicula.poster }}" />
+    <img class="max-w-xs w-96 rounded-lg" src="{{ pelicula.imagen }}" />
   </div>
   <div class="w-full md:w-1/2 mt-5 flex flex-col gap-3 px-6">
     <h1 class="text-2xl font-bold">{{ pelicula.nombre }}</h1>
     <h1 class="text-2xl font-bold">{{ pelicula.anio }}</h1>
     <p>{{ pelicula.descripcion }}</p>
+    <div *ngIf="isFavorite ;else noFavorite">
+      <button (click)="eliminarFav(favId)" type="button" class="w-full focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">QUITAR FAVORITOS</button>
+    </div>
+    <ng-template #noFavorite><button (click)="anadirFav()" type="button" class="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">AÑADIR A FAVORITOS</button></ng-template>
+
   </div>
 </section>
 <section class="flex flex-col justify-center items-center py-10 gap-12">
-  <div class="w-10/12" *ngIf="usuario!=null; else noLogin">
+  <div class="w-10/12" *ngIf="usuario.id!=0; else noLogin">
   <form action="" class="w-full" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="relative z-0 w-full mb-6 group">
       <input type="text" name="comentario" id="comentario" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required ngModel />
@@ -21,8 +26,7 @@
   </form>
 </div>
 <ng-template #noLogin><a class="text-blue-600 hover:underline " routerLink="/login">INICIE SESION PARA PODER COMENTAR</a></ng-template>
-
-      <div class="w-10/12 divide-y" *ngIf="pelicula.comments.length > 0; else noComments">
+     <div class="w-10/12 divide-y" *ngIf="pelicula.comments.length > 0; else noComments">
       <div class="flex w-full" *ngFor="let comentario of pelicula.comments">
         <img
           class="rounded-[50%] object-cover w-20 h-20 p-4"
@@ -36,6 +40,5 @@
       </div>
   </div>
  <ng-template #noComments>NO HAY COMENTARIOS</ng-template>
-
-
 </section>
+

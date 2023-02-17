@@ -1,4 +1,5 @@
 import { Comentario } from "./comentario";
+import { Pelicula } from "./pelicula";
 
 export interface Usuario {
       id: number,
@@ -7,5 +8,6 @@ export interface Usuario {
       pfp: string,
       rol:number,
       user: string,
-      comments:Comentario[]
+      comments:Comentario[],
+      favoritos:Pelicula[]
 }

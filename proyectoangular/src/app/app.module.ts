@@ -16,6 +16,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { JwtInterceptorInterceptor } from './jwt-interceptor.interceptor';
 import { RegisterComponent } from './components/register/register.component';
 import { EditarComponent } from './components/editar/editar.component';
+import { EditarPeliculaComponent } from './components/editar-pelicula/editar-pelicula.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { EditarComponent } from './components/editar/editar.component';
     CrearPeliculaComponent,
     PerfilComponent,
     RegisterComponent,
-    EditarComponent
+    EditarComponent,
+    EditarPeliculaComponent
   ],
   imports: [
     BrowserModule,

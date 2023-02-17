@@ -21,7 +21,10 @@ onSubmit(form : NgForm){
   const poster = form.value.img
   const descripcion = form.value.descripcion
 
-  let pelicula:Pelicula={nombre:nombre,poster:poster,comments:[],descripcion:descripcion,anio:anio,id:0}
+  let pelicula:Pelicula={
+    nombre: nombre, imagen: poster, comments: [], descripcion: descripcion, anio: anio, id: 0,
+    favoritos: []
+  }
   console.log(JSON.stringify(pelicula))
 
   this.anadirPelicula.anadirPelicula(pelicula).subscribe();console.log(pelicula);

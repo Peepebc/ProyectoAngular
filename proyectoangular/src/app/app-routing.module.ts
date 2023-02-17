@@ -10,6 +10,7 @@ import { IsAdminGuard } from './guardianes/is-admin.guard';
 import { UserGuardGuard } from './guardianes/user-guard.guard';
 import { RegisterComponent } from './components/register/register.component';
 import { EditarComponent } from './components/editar/editar.component';
+import { EditarPeliculaComponent } from './components/editar-pelicula/editar-pelicula.component';
 
 
 const appRoutes:Routes=[
@@ -17,6 +18,7 @@ const appRoutes:Routes=[
   {path:'juego/:id',component:JuegoComponent},
   {path:'anadirJuegos',canActivate:[IsAdminGuard],component:CrearPeliculaComponent},
   {path:'editar',canActivate:[IsAdminGuard],component:EditarComponent},
+  {path:'editarPelicula/:id',canActivate:[IsAdminGuard],component:EditarPeliculaComponent},
   {path:'perfil',canActivate:[UserGuardGuard],component:PerfilComponent},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
